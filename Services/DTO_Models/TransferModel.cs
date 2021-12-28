@@ -22,7 +22,7 @@ namespace Services.DTO_Models
         public string SalesChannel { get; set; }
 
         [Name("Order Priority")]
-        public string OrderPrioriy { get; set; }
+        public char OrderPrioriy { get; set; }
 
         [Name("Order Date")]
         public DateTime OrderDate { get; set; }

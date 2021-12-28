@@ -18,7 +18,7 @@ namespace Models
         public DateTime OrderDate { get; set; }
         public int OrderId { get; set; }
         public string CountryId { get; set; }
-        public Country country { get; set; }
+        public Country Country { get; set; }
         public List<Sale> Sales { get; set; }
     }
 }

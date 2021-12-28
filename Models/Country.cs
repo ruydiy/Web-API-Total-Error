@@ -16,5 +16,7 @@ namespace Models
         public string CountryName { get; set; }
         public string RegionId { get; set; }
         public Region Region { get; set; }
+
+        public List<Order> Orders { get; set; }
     }
 }

@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211123103501_Initional")]
-    partial class Initional
+    [Migration("20211228144150_createDatabase")]
+    partial class createDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -130,11 +130,11 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Models.Order", b =>
                 {
-                    b.HasOne("Models.Country", "country")
-                        .WithMany()
+                    b.HasOne("Models.Country", "Country")
+                        .WithMany("Orders")
                         .HasForeignKey("CountryId");
 
-                    b.Navigation("country");
+                    b.Navigation("Country");
                 });
 
             modelBuilder.Entity("Models.Sale", b =>
@@ -144,6 +144,11 @@ namespace Data.Migrations
                         .HasForeignKey("OrderId");
 
                     b.Navigation("Order");
+                });
+
+            modelBuilder.Entity("Models.Country", b =>
+                {
+                    b.Navigation("Orders");
                 });
 
             modelBuilder.Entity("Models.Order", b =>
