@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Models.BaseModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class Order : Base
+    public class Order : FileCreatedBaseModel
     {
         public Order() :base()
         {

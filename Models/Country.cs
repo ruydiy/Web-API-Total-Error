@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class Country : Base
+    public class Country : BaseModel
     {
         public Country() : base()
         {

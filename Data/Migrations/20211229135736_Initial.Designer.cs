@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211228144150_createDatabase")]
-    partial class createDatabase
+    [Migration("20211229135736_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -29,6 +29,9 @@ namespace Data.Migrations
                     b.Property<string>("CountryName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("RegionId")
                         .HasColumnType("nvarchar(450)");
 
@@ -39,6 +42,22 @@ namespace Data.Migrations
                     b.ToTable("Countries");
                 });
 
+            modelBuilder.Entity("Models.LastReadedFile", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("LastReaded")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("LastReadedFiles");
+                });
+
             modelBuilder.Entity("Models.Order", b =>
                 {
                     b.Property<string>("Id")
@@ -46,6 +65,12 @@ namespace Data.Migrations
 
                     b.Property<string>("CountryId")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("GeneratedAt")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("ItemType")
                         .HasColumnType("nvarchar(max)");
@@ -75,6 +100,9 @@ namespace Data.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("RegionName")
                         .HasColumnType("nvarchar(max)");
 
@@ -87,6 +115,9 @@ namespace Data.Migrations
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("OrderId")
                         .HasColumnType("nvarchar(450)");
@@ -117,6 +148,28 @@ namespace Data.Migrations
                     b.HasIndex("OrderId");
 
                     b.ToTable("Sales");
+                });
+
+            modelBuilder.Entity("Models.User", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("Models.Country", b =>

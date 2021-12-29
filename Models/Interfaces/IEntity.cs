@@ -4,14 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Models
+namespace Models.Interfaces
 {
-    public class Base
+    public interface IEntity
     {
-        public Base()
-        {
-            Id = Guid.NewGuid().ToString();
-        }
         public string Id { get; set; }
     }
 }

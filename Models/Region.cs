@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class Region : Base
+    public class Region : BaseModel
     {
         public Region() : base()
         {
