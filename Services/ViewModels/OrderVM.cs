@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Services.DTO_Models
 {
-    public class OrderDTO
+    public class OrderVM
     {
         public string ItemType { get; set; }
         public string SalesChannel { get; set; }
@@ -14,7 +14,7 @@ namespace Services.DTO_Models
         public DateTime OrderDate { get; set; }
         public int OrderId { get; set; }
         public string CountryId { get; set; }
-        public CountryDTO country { get; set; }
-        public List<SaleDTO> Sales { get; set; }
+        public CountryVM Country { get; set; }
+        public List<SaleVM> Sales { get; set; }
     }
 }

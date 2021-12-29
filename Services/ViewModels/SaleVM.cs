@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Services.DTO_Models
 {
-    public class SaleDTO
+    public class SaleVM
     {
         public DateTime ShipDate { get; set; }
         public int UnitsSold { get; set; }
@@ -16,6 +16,6 @@ namespace Services.DTO_Models
         public decimal TotalCost { get; set; }
         public decimal TotalProfit { get; set; }
         public string OrderId { get; set; }
-        public OrderDTO Order { get; set; }
+        public OrderVM Order { get; set; }
     }
 }

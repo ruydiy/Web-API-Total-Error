@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Services.DTO_Models
 {
-    public class RegionDTO
+    public class RegionVM
     {
         public string RegionName { get; set; }
-        public List<CountryDTO> Countries { get; set; }
+        public List<CountryVM> Countries { get; set; }
     }
 }

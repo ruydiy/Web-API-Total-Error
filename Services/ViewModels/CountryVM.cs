@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace Services.DTO_Models
 {
-    public class CountryDTO
+    public class CountryVM
     {
         public string CountryName { get; set; }
         public string RegionId { get; set; }
-        public RegionDTO Region { get; set; }
+        public RegionVM Region { get; set; }
+
+        public List<OrderVM> Orders { get; set; }
     }
 }
